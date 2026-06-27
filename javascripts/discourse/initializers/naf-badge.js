@@ -1,7 +1,9 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("1.0", (api) => {
-  api.addPosterIcons((userCustomFields) => {
+  api.addPosterIcons((userCustomFields, post) => {
+    console.log("[naf-badge] userCustomFields:", JSON.stringify(userCustomFields));
+    console.log("[naf-badge] post.username:", post?.username);
     if (userCustomFields?.user_field_3 !== "true") {
       return;
     }
