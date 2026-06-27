@@ -13,6 +13,7 @@ export default apiInitializer("1.0", (api) => {
       title: `NAF #${nafId}`,
       className: "naf-verified-icon",
       url: `https://member.thenaf.net/index.php?module=NAF&type=coachpage&coach=${nafId}&variant=16`,
+      target: "_blank",
     };
   });
 });
