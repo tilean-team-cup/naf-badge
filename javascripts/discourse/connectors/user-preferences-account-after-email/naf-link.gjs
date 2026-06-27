@@ -6,6 +6,8 @@ export default class NafLink extends Component {
 
   get isOwnProfile() {
     const model = this.args.outletArgs?.model;
+    console.log("[naf-link] outletArgs:", this.args.outletArgs);
+    console.log("[naf-link] model:", model?.id, "currentUser:", this.currentUser?.id);
     return model?.id === this.currentUser?.id;
   }
 
