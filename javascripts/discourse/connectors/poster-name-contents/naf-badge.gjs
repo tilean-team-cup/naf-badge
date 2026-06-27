@@ -4,6 +4,8 @@ import { htmlSafe } from "@ember/template";
 export default class NafBadge extends Component {
   get isNafVerified() {
     const fields = this.args.outletArgs?.user?.custom_fields;
+    console.log("[naf-badge] outletArgs:", this.args.outletArgs);
+    console.log("[naf-badge] custom_fields:", fields);
     return fields?.user_field_3 === "true";
   }
 
