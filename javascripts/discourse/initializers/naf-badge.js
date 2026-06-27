@@ -1,23 +1,17 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer("1.0", (api) => {
-  api.registerValueTransformer("poster-name-icons", ({ value, context }) => {
-    const user = context?.user;
-    const fields = user?.custom_fields;
-
-    if (!fields || fields.user_field_3 !== "true") {
-      return value;
+  api.addPosterIcons((userCustomFields) => {
+    if (userCustomFields?.user_field_3 !== "true") {
+      return;
     }
 
-    const nafId = fields.user_field_1 || "";
+    const nafId = userCustomFields.user_field_1 || "";
 
-    return [
-      ...value,
-      {
-        emoji: "naf",
-        title: `NAF #${nafId}`,
-        extraClass: "naf-verified-icon",
-      },
-    ];
+    return {
+      emoji: "naf",
+      title: `NAF #${nafId}`,
+      className: "naf-verified-icon",
+    };
   });
 });
