@@ -13,7 +13,7 @@ export default class NafBadge extends Component {
 
   get emojiUrl() {
     return htmlSafe(
-      `<img src="/uploads/default/original/1X/naf.png" class="emoji naf-emoji" title=":naf:" alt=":naf:">`
+      `<img src="/uploads/default/original/1X/c1e9f7bc184c0dad35be8e9a6487b200a573ca9d.png" class="emoji naf-emoji" title=":naf:" alt=":naf:">`
     );
   }
 
